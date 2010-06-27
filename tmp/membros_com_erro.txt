@@ -1,0 +1,27 @@
+Membro nao exportado
+Nome: JURACI DE ALMEIDA
+Codigo: 
+motivo: 
+PGError: ERROR:  invalid input syntax for type date: "-0001-11-30"
+LINE 1: ...pdated_at") VALUES ('2010-06-27 01:27:08.273358', '-0001-11-...
+                                                             ^
+: INSERT INTO "pessoas" ("created_at", "data_nascimento", "id_membro_legado", "nome", "nome_curto", "sexo", "type", "updated_at") VALUES ('2010-06-27 01:27:08.273358', '-0001-11-30', 703, 'JURACI DE ALMEIDA', 'JURACI DE ALMEIDA', 't', NULL, '2010-06-27 01:27:08.273358') RETURNING "id"
+
+Membro nao exportado
+Nome: ANDRÉ SANTOS DE OLIVEIRA
+Codigo: 
+motivo: 
+PGError: ERROR:  invalid input syntax for type date: "-0001-11-30"
+LINE 1: ...pdated_at") VALUES ('2010-06-27 01:27:08.370781', '-0001-11-...
+                                                             ^
+: INSERT INTO "pessoas" ("created_at", "data_nascimento", "id_membro_legado", "nome", "nome_curto", "sexo", "type", "updated_at") VALUES ('2010-06-27 01:27:08.370781', '-0001-11-30', 714, 'ANDRÉ SANTOS DE OLIVEIRA', 'ANDRÉ SANTOS DE OLIVEIRA', 't', NULL, '2010-06-27 01:27:08.370781') RETURNING "id"
+
+Membro nao exportado
+Nome: LUCIANA SANTOS ROMEIROS
+Codigo: 
+motivo: 
+PGError: ERROR:  invalid input syntax for type date: "-0001-11-30"
+LINE 1: ...pdated_at") VALUES ('2010-06-27 01:27:09.130457', '-0001-11-...
+                                                             ^
+: INSERT INTO "pessoas" ("created_at", "data_nascimento", "id_membro_legado", "nome", "nome_curto", "sexo", "type", "updated_at") VALUES ('2010-06-27 01:27:09.130457', '-0001-11-30', 904, 'LUCIANA SANTOS ROMEIROS', 'LUCIANA SANTOS ROMEIROS', 'f', NULL, '2010-06-27 01:27:09.130457') RETURNING "id"
+
