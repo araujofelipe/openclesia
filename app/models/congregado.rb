@@ -1,0 +1,2 @@
+class Congregado < Pessoa
+end

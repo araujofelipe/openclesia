@@ -1,0 +1,3 @@
+class Membro < Congregado
+end
+
