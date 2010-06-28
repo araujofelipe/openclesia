@@ -9,24 +9,24 @@ class MigracaoMembro
 	end
 
 	#migra os dados de membros para pessoa
-	def load_pessoas_by_membro_legado(conn)
-		puts 'migrando dados de membro para pessoa'
+	def load_membros_by_membro_legado(conn)
+		puts 'migrando dados de membros'
 		rs = conn.exec(@sql_recupera_membros)
     erros = []
 	  quantidade_acertos = 0
 		rs.each do |row|
       begin
-        pessoa = cria_ou_recupera_pessoa(row['cod_membro'])
-        pessoa.nome = row['nom_membro']
-        pessoa.nome_curto = row['nom_carteirinha_membro']
-        pessoa.data_nascimento = row['dta_nascimento']
-        pessoa.sexo = masculino?(row['dig_sexo'])
-        pessoa.save
-        puts "#{pessoa.nome} importada"
+        membro = cria_ou_recupera_membro(row['cod_membro'])
+        membro.nome = row['nom_membro']
+        membro.nome_curto = row['nom_carteirinha_membro']
+        membro.data_nascimento = row['dta_nascimento']
+        membro.sexo = masculino?(row['dig_sexo'])
+        membro.save
+        puts "#{membro.nome} importada"
 				quantidade_acertos = quantidade_acertos + 1
       rescue => err
-        erros[erros.size] = {:cod_membro => pessoa.id, :nome => pessoa.nome, :err => err}
-        puts "erro na importacao: #{pessoa.nome}"         
+        erros[erros.size] = {:cod_membro => membro.id, :nome => membro.nome, :err => err}
+        puts "erro na importacao: #{membro.nome}"         
       end
 		end	
 
@@ -51,14 +51,14 @@ class MigracaoMembro
     end
   end
 
-  #Cria ou recupera um pessoa pelo id do sistema legado
-  def cria_ou_recupera_pessoa(id_membro_legado)
-    pessoa = Pessoa.find_by_id_membro_legado(id_membro_legado)
-    if(pessoa == nil) 
-      pessoa = Pessoa.new
-      pessoa.id_membro_legado = id_membro_legado
+  #Cria ou recupera um membro pelo id do sistema legado
+  def cria_ou_recupera_membro(id_membro_legado)
+    membro = Membro.find_by_id_membro_legado(id_membro_legado)
+    if(membro == nil) 
+      membro = Membro.new
+      membro.id_membro_legado = id_membro_legado
     end
-    return pessoa    
+    return membro    
   end
   
   #Diz se o sexo passado como paramentro do do genero masculino (true)

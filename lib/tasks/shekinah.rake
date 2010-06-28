@@ -8,7 +8,7 @@ namespace :shekinah do
 	task :createpessoas do
 		conn = PGconn.connect("localhost", 5432, '', '', "shekinah", "postgres", "caiozinho@133")
 		migracao_membro = MigracaoMembro.new
-		migracao_membro.load_pessoas_by_membro_legado(conn)
+		migracao_membro.load_membros_by_membro_legado(conn)
 	end
 
 end
