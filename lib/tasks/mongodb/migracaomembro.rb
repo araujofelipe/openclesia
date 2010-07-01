@@ -14,6 +14,7 @@ module MongodbTasks
 		#migra os dados de membros para pessoa
 		def exec(conn)
 			puts 'migrando dados de membros'
+			Pessoa.delete_all
 			rs = conn.exec(@sql_recupera_membros)
     	erros = []
 	  	quantidade_acertos = 0
