@@ -1,6 +1,7 @@
 require ::File.expand_path('../../../config/environment',  __FILE__)
 require ::File.expand_path('../../../lib/tasks/mongodb/base',  __FILE__)
-require ::File.expand_path('../../../lib/tasks/mongodb/migracaomembro',  __FILE__)
+require ::File.expand_path('../../../lib/tasks/mongodb/migramembro',  __FILE__)
+require ::File.expand_path('../../../lib/tasks/mongodb/migracongregacao',  __FILE__)
 
 namespace :shekinah do
 
