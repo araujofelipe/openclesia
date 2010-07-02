@@ -6,10 +6,16 @@ require ::File.expand_path('../../../lib/tasks/mongodb/migracongregacao',  __FIL
 namespace :shekinah do
 
 	desc 'cria as pessoas no mongodb'
-	task :createpessoasinmongodb do
+	task :migra do
+
 		conn = PGconn.connect("localhost", 5432, '', '', "shekinah", "postgres", "caiozinho@133")
-		migracao_mongodb = MongodbTasks::MigraMembro.new
-		migracao_mongodb.exec(conn)		
+
+		migracongregacao = MongodbTasks::MigraCongregacao.new
+		migracongregacao.exec(conn)		
+
+		migramembro = MongodbTasks::MigraMembro.new
+		migramembro.exec(conn)		
+
 	end
 
 end
